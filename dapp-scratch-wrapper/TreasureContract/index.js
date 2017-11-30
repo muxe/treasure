@@ -16,7 +16,7 @@ class TreasureContract {
     this.unlocked = false
     this.balanceWei = 0
     this.balance = 0
-    this.address = '0x82d50ad3c1091866e258fd0f1a7cc9674609d254'
+    this.address = '0x0df944ee1b3dd681142a3c357b515fc5a6770eac'
     this.genesisBlock = 0
     this.loading = false
     this.options = {
@@ -44,10 +44,11 @@ class TreasureContract {
       let web3Provider = false
       let idManager = new IdManagerProvider({
         skipSecurity: true,
-        rpcUrl: 'http://127.0.0.1:7545'
+        // rpcUrl: 'http://127.0.0.1:7545'
       })
 
       idManager.checkIdManager().then((idManagerPresent)=>{
+        console.log('idManagerPresent', idManagerPresent, idManager);
 				// check for aedentity app
         if (idManagerPresent) {
           web3Provider = idManager.web3.currentProvider
